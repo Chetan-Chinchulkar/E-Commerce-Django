@@ -1,0 +1,40 @@
+{% extends "ecomm/base.html" %}
+
+{% block content %}
+
+    {% for item in items %}
+        <!-- <h1> {{ item.id }}</h1> -->
+        
+        <div class="items">
+            <h1> 
+                {{item.name}} 
+                <img src="{{item.imgsrc}}" alt="Image" width="10%" height="10%" >
+            </h1>
+            <p> Price : {{item.price}} </p>
+            <p> Avg.Rating : {{item.rating}} </p>
+            <p> Quantity available : {{item.quantity}} </p>
+            <p> Category : {{item.category}} </p>
+            <p> 
+                <button class="btn btn-outline-info" type="submit" onclick=location.href='{% url 'order-success' %}'>
+                    Buy now
+                </button>
+            </p>
+            
+        </div>
+        
+
+        <!--
+        <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <a class="mr-2" href="#">{{item.name}}</a>
+                <small class="text-muted">{{ item.date| date:"F d, Y" }}</small>
+              </div>
+              <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+              <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+        -->
+    {% endfor %}
+
+{% endblock content %}
