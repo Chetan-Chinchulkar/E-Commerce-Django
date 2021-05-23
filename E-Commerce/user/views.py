@@ -17,6 +17,8 @@ def register(request):
         form=UserRegisterForm()
     
     return render(request,'user/register.html',{'form':form})
+    
+
 
 @login_required
 def profile(request):
@@ -40,7 +42,7 @@ def profile(request):
     }
     return render(request, 'user/profile.html',context)
 
-'''
+
 @login_required
 def buy(request):
     return render(request, 'user/buy.html')
@@ -48,4 +50,3 @@ def buy(request):
 @login_required
 def add_to_cart(request):
     return 
-'''
